@@ -1,0 +1,8 @@
+
+data _null_;
+do i= 11 to 16;
+call execute(cats("data edad",i,";
+			set sashelp.class (where=(age=",i,"));
+			run;"));
+end;
+run;
