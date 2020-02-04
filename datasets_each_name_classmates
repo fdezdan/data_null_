@@ -1,0 +1,9 @@
+
+data _null_;
+set sashelp.class ;
+call symput('nombre',name);
+call execute(cats('data  &nombre.; 
+			 set sashelp.class (where=(name= "&nombre."));
+			 run;'));
+
+run;
